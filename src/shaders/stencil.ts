@@ -8,7 +8,7 @@ ${cameraUniformStruct}
 ${transformUniformStruct}
 
 @binding(0) @group(0) var<uniform> camera: Camera;
-@binding(1) @group(0) var<uniform> transform: Transform;
+@binding(0) @group(1) var<uniform> transform: Transform;
 
 struct VertexOutput {
   @builtin(position) position: vec4f,
