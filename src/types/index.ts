@@ -36,14 +36,3 @@ export interface StencilFace {
   geometry: ObjectGeometry;
   transform: Matrix4x4;
 }
-
-// Extend Window interface for WebGPU support
-declare global {
-  interface Navigator {
-    readonly gpu?: GPU;
-  }
-
-  interface HTMLCanvasElement {
-    getContext(contextId: "webgpu"): GPUCanvasContext | null;
-  }
-}
