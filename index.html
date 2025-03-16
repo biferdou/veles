@@ -1,13 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veles</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    
+    #canvas {
+      width: 100%;
+      height: 100vh;
+      display: block;
+    }
+    
+    #info {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 400px;
+      pointer-events: none;
+    }
+    
+    #controls {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      border-radius: 5px;
+    }
+    
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  
+  <div id="info">
+    <h1>Veles</h1>
+  </div>
+  
+  <script type="module" src="src/index.ts"></script>
+  <script>
+    // Simple control for hiding info panel
+    document.getElementById('hide-info').addEventListener('click', function() {
+      const info = document.getElementById('info');
+      if (info.classList.contains('hidden')) {
+        info.classList.remove('hidden');
+        this.textContent = 'Hide Info';
+      } else {
+        info.classList.add('hidden');
+        this.textContent = 'Show Info';
+      }
+    });
+  </script>
+</body>
 </html>
